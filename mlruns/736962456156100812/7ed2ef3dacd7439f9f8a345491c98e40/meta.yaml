@@ -1,0 +1,14 @@
+artifact_uri: /mlflow/mlruns/736962456156100812/7ed2ef3dacd7439f9f8a345491c98e40/artifacts
+end_time: 1752780647264
+entry_point_name: ''
+experiment_id: '736962456156100812'
+lifecycle_stage: active
+run_id: 7ed2ef3dacd7439f9f8a345491c98e40
+run_name: amazing-squid-284
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1752780643195
+status: 3
+tags: []
+user_id: root

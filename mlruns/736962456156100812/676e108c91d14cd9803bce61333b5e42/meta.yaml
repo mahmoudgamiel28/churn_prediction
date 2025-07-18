@@ -1,0 +1,14 @@
+artifact_uri: /mlflow/mlruns/736962456156100812/676e108c91d14cd9803bce61333b5e42/artifacts
+end_time: 1752783792123
+entry_point_name: ''
+experiment_id: '736962456156100812'
+lifecycle_stage: active
+run_id: 676e108c91d14cd9803bce61333b5e42
+run_name: inquisitive-bug-724
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1752783784355
+status: 3
+tags: []
+user_id: root

@@ -1,0 +1,14 @@
+artifact_uri: /mlflow/mlruns/736962456156100812/055b82468f034823a44ab88c5e7a96e7/artifacts
+end_time: 1752782919051
+entry_point_name: ''
+experiment_id: '736962456156100812'
+lifecycle_stage: active
+run_id: 055b82468f034823a44ab88c5e7a96e7
+run_name: redolent-steed-574
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1752782913804
+status: 3
+tags: []
+user_id: root

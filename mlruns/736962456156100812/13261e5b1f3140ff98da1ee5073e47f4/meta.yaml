@@ -1,0 +1,14 @@
+artifact_uri: /mlflow/mlruns/736962456156100812/13261e5b1f3140ff98da1ee5073e47f4/artifacts
+end_time: 1752781242565
+entry_point_name: ''
+experiment_id: '736962456156100812'
+lifecycle_stage: active
+run_id: 13261e5b1f3140ff98da1ee5073e47f4
+run_name: rebellious-fawn-416
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1752781238572
+status: 3
+tags: []
+user_id: root

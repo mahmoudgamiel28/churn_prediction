@@ -1,0 +1,14 @@
+artifact_uri: /mlflow/mlruns/736962456156100812/eb8a033ecad841f58bd17ca5d453377f/artifacts
+end_time: 1752782411523
+entry_point_name: ''
+experiment_id: '736962456156100812'
+lifecycle_stage: active
+run_id: eb8a033ecad841f58bd17ca5d453377f
+run_name: thundering-chimp-537
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1752782407305
+status: 3
+tags: []
+user_id: root
