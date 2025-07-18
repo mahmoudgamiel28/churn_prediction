@@ -83,11 +83,9 @@ curl http://localhost:8000/health
 
 **Access Points**:
 
-- 📚 **API Documentation**: http://localhost:8000/docs (or dynamically assigned port)
-- 💊 **Health Monitoring**: http://localhost:8000/health (or dynamically assigned port)
-- 🔬 **MLflow Dashboard**: http://localhost:5000
-
-**Note**: The API will automatically find an available port starting from 8000. If port 8000 is busy, it will try ports 8001, 8002, etc., and notify you which port is being used.
+- 📚 **API Documentation**: http://localhost:8000/docs
+- 💊 **Health Monitoring**: http://localhost:8000/health
+- 🔬 **MLflow Dashboard**: http://localhost:5050
 
 ### 📡 API Usage Examples
 
@@ -230,7 +228,7 @@ pip install -r requirements.txt
 python main.py
 
 # Start MLflow tracking server
-mlflow ui --port 5000
+mlflow ui --port 5050
 
 # Launch API server
 python run_api.py
@@ -284,16 +282,15 @@ Modify `config.py` to customize:
 
 ```bash
 # Core service configuration
-MLFLOW_TRACKING_URI=http://localhost:5000    # MLflow server endpoint
+MLFLOW_TRACKING_URI=http://localhost:5050    # MLflow server endpoint
 MODEL_DIR=./models                           # Model storage directory
-API_PORT=8000                               # Initial API service port (will auto-increment if busy)
+API_PORT=8000                               # API service port
 
 # Docker volume configuration
 ./models:/app/models                        # Persistent model storage
 mlflow_data:/mlflow                         # MLflow tracking persistence
 ```
 
-**Dynamic Port Allocation**: The API server will automatically find an available port starting from the `API_PORT` value (default: 8000). If the specified port is busy, it will try the next available port and notify you of the actual port being used.
 
 ---
 

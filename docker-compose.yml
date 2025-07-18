@@ -11,7 +11,7 @@ services:
       - "8000:8000"
     environment:
       - DATABASE_URL=sqlite:///app/data/db.sqlite3
-      - MLFLOW_TRACKING_URI=http://mlflow:5000
+      - MLFLOW_TRACKING_URI=http://mlflow:5050
     depends_on:
       - mlflow
     command: python run_api.py
@@ -23,9 +23,9 @@ services:
     volumes:
       - ./mlruns:/mlflow/mlruns
     ports:
-      - "5000:5000"
+      - "5050:5050"
     healthcheck:
-      test: ["CMD-SHELL", "curl -f http://localhost:5000 || exit 1"]
+      test: ["CMD-SHELL", "curl -f http://localhost:5050 || exit 1"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -39,7 +39,7 @@ services:
       - ./raw_data:/app/raw_data
       - ./mlruns:/app/mlruns
     environment:
-      - MLFLOW_TRACKING_URI=http://mlflow:5000
+      - MLFLOW_TRACKING_URI=http://mlflow:5050
       - PYTHONPATH=/app
     depends_on:
       mlflow:

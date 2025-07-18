@@ -44,7 +44,7 @@ class Config:
     CV_RANDOM_STATE: int = 42
     
     # MLflow configuration
-    MLFLOW_TRACKING_URI: str = os.getenv('MLFLOW_TRACKING_URI', "http://localhost:5000")
+    MLFLOW_TRACKING_URI: str = os.getenv('MLFLOW_TRACKING_URI', "http://localhost:5050")
     MLFLOW_EXPERIMENT_NAME: str = "customer_churn_prediction"
     MLFLOW_MODEL_NAME: str = "churn_predictor"
     
