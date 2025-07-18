@@ -226,6 +226,9 @@ def engineer_features(df: pd.DataFrame) -> pd.DataFrame:
     # Handle any remaining infinite values
     final_features = final_features.replace([np.inf, -np.inf], 0)
     
+    # Remove userId from features for model training
+    features_for_training = final_features.drop('userId', axis=1)
+    
     # Log any extreme values for debugging
     numeric_cols = final_features.select_dtypes(include=[np.number]).columns
     for col in numeric_cols:
@@ -241,8 +244,13 @@ def engineer_features(df: pd.DataFrame) -> pd.DataFrame:
     import os
     os.makedirs("data/preprocessed_data", exist_ok=True)
     
-    final_features.to_parquet("data/preprocessed_data/engineered_features.parquet", index=False)
-    logger.info("Saved engineered features to data/preprocessed_data/engineered_features.parquet")
+    # Save features with userId for reference
+    final_features.to_parquet("data/preprocessed_data/engineered_features_with_id.parquet", index=False)
+    logger.info("Saved engineered features with userId to data/preprocessed_data/engineered_features_with_id.parquet")
+    
+    # Save features without userId for model training
+    features_for_training.to_parquet("data/preprocessed_data/engineered_features.parquet", index=False)
+    logger.info("Saved engineered features for training to data/preprocessed_data/engineered_features.parquet")
     
     # Also save individual feature groups for analysis
     session_features.to_parquet("data/preprocessed_data/session_features.parquet", index=False)
@@ -251,7 +259,7 @@ def engineer_features(df: pd.DataFrame) -> pd.DataFrame:
     skip_features.to_parquet("data/preprocessed_data/skip_features.parquet", index=False)
     logger.info("Saved individual feature groups to data/preprocessed_data/")
     
-    logger.info(f"Feature engineering completed! Final shape: {final_features.shape}")
-    logger.info(f"Features created: {list(final_features.columns)}")
+    logger.info(f"Feature engineering completed! Final shape: {features_for_training.shape}")
+    logger.info(f"Features created: {list(features_for_training.columns)}")
     
-    return final_features
+    return features_for_training

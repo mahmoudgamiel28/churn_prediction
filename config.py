@@ -12,7 +12,7 @@ class Config:
     """Configuration class for the ML pipeline"""
     
     # Data paths
-    DATA_PATH: str = 'raw_data/customer_churn.json'
+    DATA_PATH: str = 'data/raw_data/customer_churn.json'
     MODEL_DIR: str = 'models'
     TEST_DATA_DIR: str = 'data/test_data'
     

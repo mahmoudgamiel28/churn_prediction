@@ -217,4 +217,37 @@ async def get_model_info():
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    import socket
+    import os
+    
+    def find_available_port(start_port=8000, max_attempts=10):
+        """Find an available port starting from start_port"""
+        for port in range(start_port, start_port + max_attempts):
+            try:
+                with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
+                    sock.bind(('', port))
+                    return port
+            except OSError:
+                continue
+        raise RuntimeError(f"Could not find available port in range {start_port}-{start_port + max_attempts - 1}")
+    
+    # Get initial port from environment variable or use default
+    initial_port = int(os.getenv("API_PORT", 8000))
+    
+    try:
+        available_port = find_available_port(initial_port)
+        
+        if available_port != initial_port:
+            print(f"⚠️  Port {initial_port} is not available. Using port {available_port} instead.")
+        else:
+            print(f"✅ Starting API server on port {available_port}")
+            
+        print(f"🚀 API will be available at: http://localhost:{available_port}")
+        print(f"📚 API Documentation: http://localhost:{available_port}/docs")
+        print(f"💊 Health Check: http://localhost:{available_port}/health")
+        
+        uvicorn.run(app, host="0.0.0.0", port=available_port)
+        
+    except RuntimeError as e:
+        print(f"❌ Error: {e}")
+        exit(1)
