@@ -304,6 +304,29 @@ The pipeline provides comprehensive model assessment:
 - **Confusion Matrix**: Detailed classification breakdown
 - **Feature Importance**: Individual feature contribution analysis
 
+### 📊 Current Model Performance
+
+**Cross-Validation Results (5-fold)**:
+
+- **Test Accuracy**: 88.9%
+- **ROC AUC**: 0.855
+- **F1 Score**: 0.590 (±0.104)
+
+**Classification Performance**:
+
+- **Precision**: 88% (churned users), 89% (non-churned users)
+- **Recall**: 65% (churned users), 97% (non-churned users)
+- **False Negative Rate**: 34.8% (8 missed churners out of 23)
+- **False Positive Rate**: 3.0% (2 unnecessary interventions out of 67)
+
+**Top Predictive Features**:
+
+1. Days Active Ratio (9.3%)
+2. Number of Sessions (9.3%)
+3. About Page Visits (8.0%)
+4. Logout Frequency (5.9%)
+5. Thumbs Up Activity (5.1%)
+
 ### 🎯 Model Architecture
 
 - **Algorithm**: Logistic Regression with L2 regularization
