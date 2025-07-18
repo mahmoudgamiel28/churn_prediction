@@ -60,7 +60,7 @@
 
 ```bash
 # 1. Clone and navigate to project
-git clone <repository-url>
+git clone https://github.com/mahmoudgamiel28/churn_prediction
 cd churn-prediction
 
 # 2. Install Git LFS and fetch large files
@@ -74,11 +74,11 @@ docker build .
 # 4. Start all services
 docker-compose up -d
 
-# 5. Train initial model
-docker-compose --profile training up train-model
-
-# 6. Verify deployment
+# 5. Verify deployment
 curl http://localhost:8000/health
+
+# 6. Train initial model
+docker-compose --profile training up train-model
 ```
 
 **Access Points**:
@@ -215,7 +215,6 @@ Comprehensive user action analytics across 15+ event types:
 - **MLflow Integration**: Model serving and experiment visualization
 - **Monitoring**: Health checks and service status endpoints
 
-
 ## 💻 Development & Usage
 
 ### 🏃‍♂️ Local Development Setup
@@ -291,7 +290,6 @@ API_PORT=8000                               # API service port
 mlflow_data:/mlflow                         # MLflow tracking persistence
 ```
 
-
 ---
 
 ## 📊 Model Performance
@@ -312,6 +310,20 @@ The pipeline provides comprehensive model assessment:
 - **Preprocessing**: StandardScaler for numerical features, categorical encoding
 - **Validation**: Stratified train/test split for balanced evaluation
 - **Tracking**: MLflow experiment logging with parameter and metric persistence
+
+### 🌲 XGBoost Integration
+
+**Why XGBoost for Churn Prediction?**
+
+XGBoost is particularly well-suited for this customer churn prediction pipeline due to:
+
+- **High-Dimensional Feature Handling**: Excels with our extensive feature set (15+ behavioral event types, session analytics, demographics) without requiring manual feature selection
+- **Imbalanced Data Management**: Built-in support for class imbalance through scale_pos_weight parameter and objective function optimization, crucial for churn prediction where churned users are typically the minority class
+- **Batch Processing Optimization**: Perfectly aligned with our periodic prediction schedule - no real-time inference requirements allow for comprehensive model complexity
+- **Robust Performance**: Handles missing values, outliers, and feature interactions automatically while maintaining strong predictive accuracy
+- **Feature Importance**: Provides detailed insights into which behavioral patterns drive churn, enabling better business decision-making
+
+**Implementation Strategy**: Future enhancement will incorporate XGBoost alongside current logistic regression for ensemble predictions and performance comparison.
 
 ---
 

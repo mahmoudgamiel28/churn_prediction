@@ -1,0 +1,14 @@
+artifact_uri: /mlflow/mlruns/736962456156100812/c158340c00a74ec8bacaac38f7f2db8b/artifacts
+end_time: 1752851808929
+entry_point_name: ''
+experiment_id: '736962456156100812'
+lifecycle_stage: active
+run_id: c158340c00a74ec8bacaac38f7f2db8b
+run_name: blushing-yak-973
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1752851803712
+status: 3
+tags: []
+user_id: root

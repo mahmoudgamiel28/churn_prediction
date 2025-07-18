@@ -8,8 +8,6 @@ RUN pip install mlflow requests
 
 RUN mkdir -p /mlflow/mlruns && chmod 777 /mlflow/mlruns
 
-VOLUME ["/mlflow/mlruns"]
-
 EXPOSE 5050
 
 CMD ["mlflow", "server", "--backend-store-uri", "file:///mlflow/mlruns", "--default-artifact-root", "/mlflow/mlruns", "--host", "0.0.0.0", "--port", "5050"]

@@ -53,6 +53,12 @@ class ChurnPredictor:
         """
         logger.info("Preparing features for modeling...")
         
+        # Debug: Print DataFrame columns and shapes
+        logger.info(f"Features DataFrame shape: {features_df.shape}")
+        logger.info(f"Features DataFrame columns: {list(features_df.columns)}")
+        logger.info(f"Churn labels DataFrame shape: {churn_labels.shape}")
+        logger.info(f"Churn labels DataFrame columns: {list(churn_labels.columns)}")
+        
         # Merge features with churn labels
         final_dataset = features_df.merge(
             churn_labels[['userId', 'churn', 'explicit_churn', 'inactive_churn']], 
@@ -192,8 +198,8 @@ class ChurnPredictor:
                 # Model configuration
                 random_state=config.RANDOM_STATE,
                 eval_metric=config.EVAL_METRIC,            # AUC is better for imbalanced data
-                enable_categorical=False,
-                early_stopping_rounds=config.EARLY_STOPPING_ROUNDS  # Prevent overfitting
+                enable_categorical=False
+                # Note: early_stopping_rounds removed for cross-validation compatibility
             )
             
             # Perform k-fold cross-validation

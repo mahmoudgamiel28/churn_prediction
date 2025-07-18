@@ -1,0 +1,14 @@
+artifact_uri: /mlflow/mlruns/736962456156100812/9b09994d583b47c3bab42fbe39113794/artifacts
+end_time: 1752851244489
+entry_point_name: ''
+experiment_id: '736962456156100812'
+lifecycle_stage: active
+run_id: 9b09994d583b47c3bab42fbe39113794
+run_name: ambitious-auk-112
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1752851244115
+status: 4
+tags: []
+user_id: root

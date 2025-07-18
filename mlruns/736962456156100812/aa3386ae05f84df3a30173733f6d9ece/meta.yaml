@@ -1,0 +1,14 @@
+artifact_uri: /mlflow/mlruns/736962456156100812/aa3386ae05f84df3a30173733f6d9ece/artifacts
+end_time: 1752851395593
+entry_point_name: ''
+experiment_id: '736962456156100812'
+lifecycle_stage: active
+run_id: aa3386ae05f84df3a30173733f6d9ece
+run_name: overjoyed-snail-300
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1752851395308
+status: 4
+tags: []
+user_id: root

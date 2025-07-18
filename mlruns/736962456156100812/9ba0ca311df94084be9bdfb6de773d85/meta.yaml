@@ -1,0 +1,14 @@
+artifact_uri: /mlflow/mlruns/736962456156100812/9ba0ca311df94084be9bdfb6de773d85/artifacts
+end_time: 1752852904960
+entry_point_name: ''
+experiment_id: '736962456156100812'
+lifecycle_stage: active
+run_id: 9ba0ca311df94084be9bdfb6de773d85
+run_name: gentle-bear-283
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1752852898726
+status: 3
+tags: []
+user_id: root
